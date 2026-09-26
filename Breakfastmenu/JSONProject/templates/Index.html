@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prayaango Holidays</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #150031;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* WARNING BAR */
+
+        .warning {
+            background: #150031;
+            border: 2px solid #9cc700;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .warning span {
+            color: yellow;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #150031,
+                #3b075f,
+                #565ad8
+            );
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #d3a800;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .lifetime {
+            color: #d3a800;
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        /* TWO COLUMN AREA */
+
+        .offer-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .product-image {
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 90%;
+            border-radius: 10px;
+        }
+
+        .offer-content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .offer-content h2 span {
+            color: #10c605;
+        }
+
+        /* FEATURES */
+
+        .features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .features li {
+            margin: 15px 0;
+            font-size: 17px;
+        }
+
+        .features li::before {
+            content: "✔";
+            color: #ebd900;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* PRICE */
+
+        .price {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .price .old {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 20px;
+        }
+
+        .price .new {
+            font-size: 40px;
+            color: #aeff00;
+            font-weight: 700;
+        }
+
+        /* BUTTON */
+
+        .buy-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #d3a800;
+            color: #000;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 600;
+            border-radius: 13px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .buy-button:hover {
+            transform: scale(1.05);
+            background: #f6c400;
+        }
+
+        .limited {
+            color: red;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 15px;
+        }
+
+        /* FEATURE CARDS */
+
+        .features-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .features-section h2 {
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border: 3px solid #feff00;
+            border-radius: 24px;
+            padding: 25px 15px;
+            box-shadow: 0 0 10px #0800ff;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+        }
+
+        /* TRUST */
+
+        .trust {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .trust h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .warning {
+                font-size: 16px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            .lifetime {
+                font-size: 28px;
+            }
+
+            .offer-section {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 480px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 25px;
+            }
+
+            .price .new {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- WARNING -->
+
+    <div class="warning">
+        <span>WARNING:</span>
+        Free Bonuses 🎁 Worth ₹22K Will Expire & NEXT PRICE Increase In...
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <h2>GET THE READYMADE</h2>
+
+            <h1>
+                500+ <span>INSTAGRAM BUSINESS</span>
+                MOTIVATIONAL POSTS
+            </h1>
+
+            <p class="subtitle">
+                (No Design Skill Required)
+            </p>
+
+            <p class="lifetime">
+                Lifetime Full Access
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+
+    <section class="container offer-section">
+
+        <div class="product-image">
+
+            <!-- Replace this image with your own -->
+            <img
+                src="https://digiteck.digimestreviews.com/wp-content/uploads/2024/05/Untitled-design_20240519_161704_0000.png"
+                alt="Instagram Business Posts"
+            >
+
+        </div>
+
+
+        <div class="offer-content">
+
+            <h2>
+                🚀 Do You Want To Grow
+                <span>Your Social Media?</span>
+            </h2>
+
+
+            <ul class="features">
+
+                <li>
+                    Get 500+ Instagram Business Motivational Posts
+                </li>
+
+                <li>
+                    Ready-Made Reels Without Logo & Watermark
+                </li>
+
+                <li>
+                    Get Instant Download Link & Lifetime Access
+                </li>
+
+                <li>
+                    Ready to Post on Social Media
+                </li>
+
+                <li>
+                    Time Saving: Saves Lot of Time
+                </li>
+
+                <li>
+                    🎁 FREE BONUS WORTH ₹22,000/-
+                </li>
+
+            </ul>
+
+
+            <div class="limited">
+                ⏰ Our Sales Offer Ends Today ⏰
+            </div>
+
+
+            <div class="price">
+
+                <div class="old">
+                    Regular Price
+                </div>
+
+                <div class="new">
+                    ₹199/-
+                </div>
+
+            </div>
+
+
+            <div style="text-align:center;">
+
+                <a href="#" class="buy-button">
+                    Buy Now For Just ₹199/-
+                </a>
+
+            </div>
+
+
+            <p style="text-align:center; margin-top:15px;">
+                ⌛ Limited Time Offer, Price Will Increase Soon ⌛
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features-section">
+
+        <div class="container">
+
+            <h2>Why You'll Love It</h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <img
+                        src="https://digiteck.digimestreviews.com/wp-content/uploads/2024/05/1_20240519_210432_0000.png"
+                        alt="High Quality"
+                    >
+
+                    <h3>
+                        High Quality Post
+                    </h3>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        src="C:\Users\Admin\localrepo\Breakfastmenu\JSONProject\big.htm"
+                        alt="Full HD"
+                    >
+
+                    <h3>
+                        Full HD Instagram Post
+                    </h3>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        src="C:\Users\Admin\OneDrive\Pictures\2026-06-28\001.jpg"
+                        alt="Small Investment"
+                    >
+
+                    <h3>
+                        Small Investment
+                    </h3>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        src="C:\Users\Admin\OneDrive\Pictures\2026-06-28\001.jpg"
+                        alt="Instant Delivery"
+                    >
+
+                    <h3>
+                        Instant Delivery
+                    </h3>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        src="https://digiteck.digimestreviews.com/wp-content/uploads/2024/05/5_20240519_210433_0004.png"
+                        alt="Hindi Post"
+                    >
+
+                    <h3>
+                        Hindi Post
+                    </h3>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        src="https://digiteck.digimestreviews.com/wp-content/uploads/2024/05/6_20240519_210433_0005.png"
+                        alt="Time Saver"
+                    >
+
+                    <h3>
+                        Time Saver
+                    </h3>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        src="https://digiteck.digimestreviews.com/wp-content/uploads/2024/05/7_20240519_210433_0006.png"
+                        alt="Lifetime Access"
+                    >
+
+                    <h3>
+                        Lifetime Access
+                    </h3>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        src="https://digiteck.digimestreviews.com/wp-content/uploads/2024/05/8_20240519_210433_0007.png"
+                        alt="Beginners"
+                    >
+
+                    <h3>
+                        Easy For Beginners
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRUST -->
+
+    <section class="trust">
+
+        <h2>
+            100% Genuine & Trusted
+        </h2>
+
+        <p>
+            One Time Payment • Lifetime Access
+        </p>
+
+    </section>
+
+
+</body>
+</html>
